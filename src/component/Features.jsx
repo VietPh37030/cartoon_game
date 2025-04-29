@@ -77,7 +77,8 @@ const Features = () => {
                         Into the Metagame layer
                     </p>
                     <p className="max-w-md font-circular-web text-lg text-blue-50 opacity-50">
-                        Immerse yourself in the world of the Metaverse...
+                        Immerse yourself in the world of the <b>M</b>etaverse, where <b>W</b>aifus come alive,<br /> <b>S</b>ummon mythical cards, <b>C</b>onquer realms, and <b>R</b>ule the <b>C</b>hain.
+
                     </p>
                 </div>
 
@@ -90,7 +91,7 @@ const Features = () => {
                                 radis<b>n</b>t
                             </>
                         }
-                        description="Immerse yourself in the world of the Metaverse..."
+                        description="Step into Radisnt — where Waifus awaken, Cards hold power, and the Metaverse becomes your battlefield."
                     />
                 </BentoTilt>
 
@@ -105,7 +106,7 @@ const Features = () => {
                                     zig<b>m</b>a<b>n</b>t
                                 </>
                             }
-                            description="Immerse yourself in the world of the Metaverse..."
+                            description="A realm where ancient spirits duel through enchanted cards and destiny is forged on the chain."
                         />
                     </BentoTilt>
 
@@ -118,7 +119,7 @@ const Features = () => {
                                     n<b>e</b>x<b>u</b>s
                                 </>
                             }
-                            description="Immerse yourself in the world of the Metaverse..."
+                            description="Venture into Nexus — the core of all realms, where champions summon legendary waifus and battle for control of the chain."
                         />
                     </BentoTilt>
 
@@ -131,7 +132,7 @@ const Features = () => {
                                     n<b>e</b>x<b>u</b>s
                                 </>
                             }
-                            description="Immerse yourself in the world of the Metaverse..."
+                            description="Venture into Nexus — the core of all realms, where champions summon legendary waifus and battle for control of the chain."
                         />
                     </BentoTilt>
 

@@ -58,12 +58,14 @@ const About = () => {
                     {/* text-sm: Kích thước chữ nhỏ (thường là 14px nếu dùng Tailwind) */}
                     {/* uppercase: Chữ in hoa */}
                     {/* md:text-[10px]: Trên màn hình medium trở lên, kích thước chữ là 10px */}
-                    Welcome to Zentry
+                    Welcome to Awaken
                 </p>
 
                 {/* Tiêu đề chính với hiệu ứng animation, sử dụng component AnimatedTitle */}
                 <AnimatedTitle
-                    title="Disc<b>o</b>ver the world's <br /> largest shared <b>a</b>dventure"
+                    title="Enter a new <b>R</b>ealm where <b>W</b>aifus <b>A</b>waken,<br /> <b>S</b>ummon legends, <b>C</b>laim treasures, and <b>R</b>ule the <b>C</b>hain."
+
+
                     containerClass="mt-5 !text-black text-center"
                     // title: Chuỗi tiêu đề, có <b> để in đậm và <br /> để xuống dòng
                     // containerClass: Các lớp CSS tùy chỉnh
@@ -78,7 +80,7 @@ const About = () => {
                     <p>The Game of Games begins—your life, now an epic MMORPG</p>
                     <p className="text-gray-500">
                         {/* text-gray-500: Màu chữ xám nhạt (thường là #6b7280 nếu dùng Tailwind) */}
-                        Zentry unites every player from countless games and platforms, both
+                        Awaken unites every player from countless games and platforms, both
                         digital and physical, into a unified Play Economy
                     </p>
                 </div>

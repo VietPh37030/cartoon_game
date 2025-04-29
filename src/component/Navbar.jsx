@@ -3,12 +3,14 @@ import Button from './Button.jsx';
 import { TiLocationArrow } from 'react-icons/ti';
 import { useWindowScroll } from 'react-use';
 import gsap from 'gsap';
+import { ethers } from 'ethers';
 
 const navItems = ['Nexus', 'Vault', 'Prologue', 'About', 'Contact'];
 
-const Navbar = () => {
+const Navbar = ({ setWalletInfo }) => {
     const [isAudioPlaying, setIsAudioPlaying] = useState(false);
     const [isIndicatorActive, setIsIndicatorActive] = useState(false);
+    const [walletAddress, setWalletAddress] = useState(null);
     const navContainerRef = useRef(null);
     const audioElementRef = useRef(null);
     const [lastScrollY, setLastScrollY] = useState(0);
@@ -50,6 +52,26 @@ const Navbar = () => {
         });
     }, [isNavVisible]);
 
+    // Kết nối ví Ronin
+    const connectWallet = async () => {
+        if (window.ronin && window.ronin.provider) {
+            try {
+                const provider = new ethers.providers.Web3Provider(window.ronin.provider);
+                await provider.send('eth_requestAccounts', []);
+                const signer = provider.getSigner();
+                const address = await signer.getAddress();
+                setWalletAddress(address);
+                // Truyền thông tin ví qua props
+                setWalletInfo({ provider, signer, address });
+            } catch (error) {
+                console.error('Lỗi kết nối ví:', error);
+                alert('Lỗi kết nối ví!');
+            }
+        } else {
+            alert('Vui lòng cài đặt Ronin Wallet!');
+        }
+    };
+
     return (
         <div
             ref={navContainerRef}
@@ -59,7 +81,7 @@ const Navbar = () => {
                 <nav className="flex size-full items-center justify-between p-4">
                     {/* Left side: Logo, Audio Indicator, Nav Items */}
                     <div className="flex items-center gap-7">
-                        <img src="/img/logo.png" alt="logo" className="w-10" />
+                        <img src="/img/logo.webp" alt="logo" className="w-10" />
                         <button
                             className="flex items-center space-x-0.5"
                             onClick={toggleAudioIndicator}
@@ -89,9 +111,10 @@ const Navbar = () => {
                     <div className="flex items-center">
                         <Button
                             id="product-button"
-                            title="Connect Wallet"
+                            title={walletAddress ? `Đã kết nối: ${walletAddress.slice(0, 6)}...` : 'Connect Wallet'}
                             rightIcon={<TiLocationArrow />}
                             containerClass="bg-white text-black rounded-full px-4 py-2 flex items-center justify-center gap-1"
+                            onClick={connectWallet}
                         />
                     </div>
                 </nav>

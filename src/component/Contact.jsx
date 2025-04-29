@@ -50,7 +50,7 @@ const Contact = () => {
                 <div className="flex flex-col items-center text-center">
                     {/* Tiêu đề phụ */}
                     <p className="mb-10 font-general text-[10px] uppercase">
-                        Join Zentry
+                        Join Awaken
                     </p>
 
                     {/* Tiêu đề chính có hiệu ứng động với font đặc biệt */}
